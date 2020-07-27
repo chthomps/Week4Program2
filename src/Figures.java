@@ -12,9 +12,31 @@ public class Figures {
 	public static void main(String[] args) {
 
 		Figures Box = new Figures();
-		Box.size =10;
+		Box.size = 11;
 		Box.printBox();
+
+		Figures X = new Figures();
+		X.size = 11;
+		X.printX();
 		
+		Figures Diamond = new Figures();
+		Diamond.size = 11;
+		Diamond.printDiamond();
+	}
+
+//Establishes the printX method printing "*"
+	public void printX() {
+
+		for (int row = 0; row < size; row++) {
+
+			for (int col= 0; col < size; col++) {
+				if (col == row || col == (size - (row+1))) {
+					System.out.print("*");
+				} else
+					System.out.print(" ");
+			}
+			System.out.println();
+		}
 	}
 
 //Establishes the printBox method printing "*"
@@ -27,5 +49,22 @@ public class Figures {
 			System.out.println();
 		}
 
+	}
 	
-	}}
+//Establishes the printDiamond method printing "*"
+	public void printDiamond() {
+		
+		for (int row = 0; row < size; row++) {
+
+			for (int col= 0; col < size; col++) {
+				if (row+col == size/2 || col ==row+(size/2) || row+col==(size-1)+(size/2) || row==(col-1)+(size/2)){
+					System.out.print("*");
+				} else
+					System.out.print(" ");
+			}
+			System.out.println();
+		
+	}
+	
+}
+}
