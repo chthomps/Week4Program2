@@ -1,8 +1,9 @@
+import java.util.Scanner;
 
 public class Figures {
 
 	private static int size = 0;
-	private static char c;
+	private static int selection;
 
 //Constructor method
 	public void Figures(int size) {
@@ -11,17 +12,43 @@ public class Figures {
 //Main method
 	public static void main(String[] args) {
 
-		Figures Box = new Figures();
-		Box.size = 11;
-		Box.printBox();
-
-		Figures X = new Figures();
-		X.size = 11;
-		X.printX();
+		//Prompting user to input figure size (length x width)
+		System.out.println("Please enter an odd integer defining the size (length x width) of the figure");
 		
-		Figures Diamond = new Figures();
-		Diamond.size = 11;
-		Diamond.printDiamond();
+		Scanner scan = new Scanner(System.in);
+		
+		size = scan.nextInt();
+		
+		//Presents menu to user 
+		System.out.println("MENU: \n1. Print Box \n2. Print Diamond \n3. Print X \n4. Quit Program ");
+		
+		selection = scan.nextInt();
+
+		do {
+			switch (selection) {
+			case 1:
+				Figures Box = new Figures();
+				Box.size = size;
+				Box.printBox();
+				break;
+			case 2:
+				Figures Diamond = new Figures();
+				Diamond.size = size;
+				Diamond.printDiamond();
+				break;
+			case 3:
+				Figures X = new Figures();
+				X.size = size;
+				X.printX();
+				break;
+			default:
+				
+	    selection = 5;
+			}
+		} while (selection<=4);	
+		scan.close();
+		
+		
 	}
 
 //Establishes the printX method printing "*"
