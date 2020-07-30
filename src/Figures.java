@@ -21,7 +21,7 @@ public class Figures {
 		size = scan.nextInt();
 		
 
-		if (size%2 == 0) {  //"invalid" comment when even number is entered
+		if (size%2 == 0) {
 		 System.out.println("Invalid figure size- must be an odd number");
 		 System.out.println();
 		 System.out.println("Reenter the size of the figure: ");
@@ -29,16 +29,17 @@ public class Figures {
 		 size = scan.nextInt();
 			}
 		
-		if (size%2 != 0)   //Present menu to user 
+		if (size%2 != 0) 
+		 do {
 			
+			//Presents menu to user 
 			System.out.println();
 			System.out.println("MENU: \n1. Print Box \n2. Print Diamond \n3. Print X \n4. Quit Program \n");
 			System.out.print("Please select an option: ");
 			
 			selection = scan.nextInt();
+
 			
-		while (selection != 4)
-		{
 			switch (selection) {
 				case 1:
 					Figures Box = new Figures();
@@ -61,12 +62,12 @@ public class Figures {
 					X.printX();
 					System.out.println();
 					break;
+				case 4: 
+				System.out.println("Good bye!");
+				scan.close();
 			}
-		
-		if (selection == 4)
-			System.out.println("Good bye!");
-			scan.close();
-			}
+		} while (selection>+1 && selection<=4 );	
+			
 	}
 
 //Establishes the printX method printing "X"
