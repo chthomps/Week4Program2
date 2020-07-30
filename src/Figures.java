@@ -7,64 +7,76 @@ public class Figures {
 
 //Constructor method
 	public void Figures(int size) {
+		
 	}
 
 //Main method
 	public static void main(String[] args) {
 
 		//Prompting user to input figure size (length x width)
-		System.out.print("Please enter an odd integer defining the size (length x width) of the figure");
+		System.out.print("Please enter an odd integer defining the size (length x width) of the figure:");
 		
 		Scanner scan = new Scanner(System.in);
 		
 		size = scan.nextInt();
+		
 
-		do {
+		if (size%2 == 0) {  //"invalid" comment when even number is entered
+		 System.out.println("Invalid figure size- must be an odd number");
+		 System.out.println();
+		 System.out.println("Reenter the size of the figure: ");
 			
+		 size = scan.nextInt();
+			}
+		
+		if (size%2 != 0)   //Present menu to user 
 			
-			//Presents menu to user 
+			System.out.println();
 			System.out.println("MENU: \n1. Print Box \n2. Print Diamond \n3. Print X \n4. Quit Program \n");
 			System.out.print("Please select an option: ");
 			
 			selection = scan.nextInt();
 			
+		while (selection != 4)
+		{
 			switch (selection) {
-			case 1:
-				Figures Box = new Figures();
-				Box.size = size;
-				Box.printBox();
-				System.out.println();
-				break;
-			case 2:
-				Figures Diamond = new Figures();
-				Diamond.size = size;
-				Diamond.printDiamond();
-				System.out.println();
-				break;
-			case 3:
-				Figures X = new Figures();
-				X.size = size;
-				X.printX();
-				System.out.println();
-				break;
-			default:
-				
-				
+				case 1:
+					Figures Box = new Figures();
+					Box.size = size;
+					System.out.println();
+					Box.printBox();
+					System.out.println();
+					break;
+				case 2:
+					Figures Diamond = new Figures();
+					Diamond.size = size;
+					System.out.println();
+					Diamond.printDiamond();
+					System.out.println();
+					break;
+				case 3:
+					Figures X = new Figures();
+					X.size = size;
+					System.out.println();
+					X.printX();
+					System.out.println();
+					break;
 			}
-		} while (selection<=4);	
 		
-	
-		
+		if (selection == 4)
+			System.out.println("Good bye!");
+			scan.close();
+			}
 	}
 
-//Establishes the printX method printing "*"
+//Establishes the printX method printing "X"
 	public void printX() {
 
 		for (int row = 0; row < size; row++) {
 
 			for (int col= 0; col < size; col++) {
 				if (col == row || col == (size - (row+1))) {
-					System.out.print("*");
+					System.out.print("X");
 				} else
 					System.out.print(" ");
 			}
