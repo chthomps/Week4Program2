@@ -66,7 +66,7 @@ public class Figures {
 				System.out.println("Good bye!");
 				scan.close();
 			}
-		} while (selection>+1 && selection<=4 );	
+		} while (selection>=1 && selection<=4 );	
 			
 	}
 
