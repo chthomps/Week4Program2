@@ -1,3 +1,8 @@
+/* Programming Fundamentals
+ * NAME: Christopher Thompson
+ * PROGRAMMING ASSIGNMENT 2
+ */
+
 import java.util.Scanner;
 
 public class Figures {
